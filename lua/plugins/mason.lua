@@ -11,6 +11,8 @@ return {
 		-- Setup Kotlin
 		require("lspconfig").clangd.setup {}
 
+		require("lspconfig").markdown_oxide.setup {}
+
         -- Настройка Lua LSP (lua_ls)
         require("lspconfig").lua_ls.setup {
             settings = {
