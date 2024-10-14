@@ -9,7 +9,7 @@ return {
         })
 
 		-- Setup Kotlin
-		require("lspconfig").jdtls.setup {}
+		require("lspconfig").clangd.setup {}
 
         -- Настройка Lua LSP (lua_ls)
         require("lspconfig").lua_ls.setup {
