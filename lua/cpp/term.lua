@@ -16,23 +16,23 @@ vim.api.nvim_create_user_command('CppTerm', function ()
     vim.api.nvim_buf_set_name(0, 'Terminal')
 
 	-- Compiling the source
-	vim.fn.system('g++ ' .. path_compiling)
+	-- vim.fn.system('g++ ' .. path_compiling)
 	-- Save return value after compile
-	local compile_status = vim.v.shell_error
+	-- local compile_status = vim.v.shell_error
 
 	-- 
-	if compile_status == 0 then
+	-- if compile_status == 0 then
 		-- Clear the terminal
-		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'clear\n')
+		-- vim.api.nvim_chan_send(vim.b.terminal_job_id, 'clear\n')
 		-- Start programm
-		vim.api.nvim_chan_send(vim.b.terminal_job_id, './a.out\n')
+		-- vim.api.nvim_chan_send(vim.b.terminal_job_id, './a.out\n')
 
-	else
+	-- else
 		-- Clear terminal
-		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'clear\n')
+		-- vim.api.nvim_chan_send(vim.b.terminal_job_id, 'clear\n')
 		-- Show conclusion of compiling
-		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'g++ ' .. path_compiling .. '\n')
-	end
+		-- vim.api.nvim_chan_send(vim.b.terminal_job_id, 'g++ ' .. path_compiling .. '\n')
+	-- end
 end, {})
 
 -------------------------------
