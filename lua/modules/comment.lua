@@ -7,13 +7,8 @@ local function comment_code()
 		SYMBOLT = ''
 		FEXT = vim.fn.expand('%:e')
 
-		if FEXT == "c" then SYMBOLT = '/'
-		elseif FEXT == "lua" then SYMBOLT = '-'-- {{{
-		elseif FEXT == "cpp" then SYMBOLT = '/'
-		elseif FEXT == "py" then SYMBOLT = '/'
-		elseif FEXT == "java" then SYMBOLT = '/'
-		elseif FEXT == "js" then SYMBOLT = '/'
-		elseif FEXT == "php" then SYMBOLT = '/'-- }}}
+		if FEXT == "cpp" then SYMBOLT = '/'
+		elseif FEXT == "lua" then SYMBOLT = '-'
 		end
 
 		local pos_cursor = vim.api.nvim_win_get_cursor(0)
@@ -47,7 +42,7 @@ vim.keymap.set('v', '<C-i>', function () comment_code() end, { noremap = true, s
 -- local lua = '-'
 -- vim.keymap.set('v', '<C-i>', ':s/^\\s*/&' .. lua .. lua .. ' ' .. '<CR>' .. ':noh<CR>', { noremap = true, silent = true })
 -- vim.keymap.set('v', '<C-i>', function ()
-	-- local cur = vim.fn.getpos("v")
-	-- print(cur)
-	-- vim.cmd(":\\<C-u>echo 'start=\" . string(getpos(\"v\")) . \" end=\" . string(getpos(\".\")) . \"\'\\<cr>gv\"")
+-- local cur = vim.fn.getpos("v")
+-- print(cur)
+-- vim.cmd(":\\<C-u>echo 'start=\" . string(getpos(\"v\")) . \" end=\" . string(getpos(\".\")) . \"\'\\<cr>gv\"")
 -- end)

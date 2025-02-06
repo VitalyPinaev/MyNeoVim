@@ -15,7 +15,7 @@ vim.api.nvim_create_user_command('CTerm', function ()
     vim.api.nvim_buf_set_name(0, 'Terminal')
 
 	-- Compiling the source
-	vim.fn.system('gcc ' .. path_compiling)
+	vim.fn.system('g++ ' .. path_compiling)
 	-- Save return value after compile
 	local compile_status = vim.v.shell_error
 
@@ -30,7 +30,7 @@ vim.api.nvim_create_user_command('CTerm', function ()
 		-- Clear terminal
 		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'clear\n')
 		-- Show conclusion of compiling
-		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'gcc ' .. path_compiling .. '\n')
+		vim.api.nvim_chan_send(vim.b.terminal_job_id, 'g++ ' .. path_compiling .. '\n')
 	end
 end, {})
 
